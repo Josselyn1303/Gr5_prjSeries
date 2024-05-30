@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        
+
         Scanner scanner = new Scanner(System.in);
         PozoJosselyn figuras = new PozoJosselyn();
         PozoJosselyn jpSC= new PozoJosselyn();
@@ -12,20 +12,41 @@ public class App {
 
         System.out.println("\nNombre del Grupo: POLI JUNIORS");
         System.out.println("\nIntegrantes: ");
-        System.out.println("\nMorales Mateo");
+        System.out.println("\nMosquera Mateo");
         System.out.println("Novillo Alejandro");
         System.out.println("Ortiz Gelen");
         System.out.println("Ortiz Justin");
         System.out.println("Pozo Josselyn ");
         System.out.println("Quirola Jose ");
 
-        
+
         System.out.println("\n ---Series Numericas---");
 
         //System.out.print("Primer serie numerica\n");
         //jq.mostrarSN1QJ(10);
         //System.out.print("\nSegunda serie numerica\n");
         //jq.mostrarSN2QJ(10);
+        Scanner teclado = new Scanner(System.in);
+        System.out.println("(SN5)Introduzca el número de términos a visualizar: ");
+        try {
+            int mmPrimos = teclado.nextInt();
+            MosqueraMateo mM = new MosqueraMateo(mmPrimos, ' ', 0);
+            mM.mmSN5();
+        } catch (Exception e) {
+            System.out.println("Error: solo ingrese números");
+            teclado.next();     
+        }   
+
+        System.out.println("(SN6)Introduzca el número de términos a visualizar: ");
+        try {
+            int mmCuadrados = teclado.nextInt();
+            MosqueraMateo mM = new MosqueraMateo(mmCuadrados, ' ', 0);
+            mM.mmSN6();
+        } catch (Exception e) {
+            System.out.println("Error: solo ingrese números");
+            teclado.next();
+        }
+      
         System.out.print("Ingrese el número de términos para la serie SN7: ");
         int num = scanner.nextInt();
 
@@ -137,11 +158,68 @@ public class App {
         System.out.print("\nSexta serie caracteres\n");
         jq.mostrarSCQJ6(10);*/
 
+      System.out.println("(SC9)Introduzca el número de caracteres a visualizar: ");
+      try {
+          int mmImpares = teclado.nextInt();
+          MosqueraMateo mM = new MosqueraMateo(mmImpares, ' ', 0);
+          mM.mmSC9();
+      } catch (Exception e) {
+          System.out.println("Error: solo ingrese números");
+          teclado.next();
+      }
+
+      System.out.println("SC10 Introduzca el número de caracteres a visualizar: ");
+      try {
+          int mmFibonacci = teclado.nextInt();
+          MosqueraMateo mM = new MosqueraMateo(mmFibonacci, ' ', 0);
+          mM.mmSC10();
+      } catch (Exception e) {
+          System.out.println("Error: solo ingrese números");
+          teclado.next();
+      }
+
         System.out.println("\n ---Series de Figuras---");
-        
+
+      System.out.println("Introduzca el tamaño del cuadrado: ");
+      try {
+          int mmTam1 = teclado.nextInt();
+          System.out.println("Introduzca el caracter para formar el cuadrado: ");
+          char mmCaracter1 = teclado.next().charAt(0);
+          MosqueraMateo mM = new MosqueraMateo(mmTam1, mmCaracter1, 0);
+          mM.mmF1();
+      } catch (Exception e) {
+          System.out.println("Error: solo ingrese números");
+          teclado.next();
+      }
+
+      System.out.println("Introduzca el tamaño del cuadrado alternado: ");
+      try {
+          int mmTam2 = teclado.nextInt();
+          System.out.println("Introduzca el caracter 1 para formar el cuadrado: ");
+          char mmCaracter2 = teclado.next().charAt(0);
+          MosqueraMateo mM = new MosqueraMateo(mmTam2, mmCaracter2, 0);
+          mM.mmF2();
+      } catch (Exception e) {
+          System.out.println("Error: solo ingrese números");
+          teclado.next();
+      }
+
+      System.out.println("Introduzca el tamaño del triángulo: ");
+      try {
+          int mmTam3 = teclado.nextInt();
+          System.out.println("Introduzca el caracter para formar el triangulo: ");
+          char mmCaracter3 = teclado.next().charAt(0);
+          MosqueraMateo mM = new MosqueraMateo(mmTam3, mmCaracter3, 0);
+          mM.mmF3();
+      } catch (Exception e) {
+          System.out.println("Error: solo ingrese números");
+          teclado.next();
+      }
+
+
         System.out.println("\nIngrese el número de filas: ");
         int filas = scanner.nextInt();
-        
+
         System.out.println("\nIngrese el símbolo que desea utilizar: ");
         char elem = scanner.next().charAt(0);
 
@@ -205,5 +283,7 @@ public class App {
         OrtizGelen.ogF12(ogTamano7);
 
         scanner.close();
+
+      
     }
 }
