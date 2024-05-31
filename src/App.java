@@ -9,6 +9,8 @@ public class App {
         PozoJosselyn jpSC= new PozoJosselyn();
         PozoJosselyn jpSN= new PozoJosselyn();
         //QuirolaJose jq = new QuirolaJose ();
+        
+       
 
         System.out.println("\nNombre del Grupo: POLI JUNIORS");
         System.out.println("\nIntegrantes: ");
@@ -18,6 +20,22 @@ public class App {
         System.out.println("Ortiz Justin");
         System.out.println("Pozo Josselyn ");
         System.out.println("Quirola Jose ");
+
+         /*
+         *Ortiz Justin 
+         */
+
+         OrtizJustin ortizJustin = new OrtizJustin();
+        ortizJustin.OJSN3(6); 
+        System.out.println();
+        ortizJustin.OJSN4(24);
+        System.out.println();
+        ortizJustin.OJF13(9);
+        System.out.println();
+        ortizJustin.OJF14(6);
+        System.out.println();
+        ortizJustin.OJF15(6);
+
 
         /* Serie Numerica en la cual se le pide al usuario ingresar el tamaño de la serie
          */
