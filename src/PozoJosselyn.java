@@ -5,8 +5,8 @@ public class PozoJosselyn {
      * @param num: limita la serie a un número de elementos 
      * @author Pozo Josselyn 
      */
-    public void jpSN7(int num){
-        for (int jpnumImprimir = 1; jpnumImprimir < num * 3; jpnumImprimir += 3) {
+    public void jpSN7(int jpnum){
+        for (int jpnumImprimir = 1; jpnumImprimir < jpnum * 3; jpnumImprimir += 3) {
                 System.out.print( jpnumImprimir + " " );                
         }
     
@@ -14,13 +14,13 @@ public class PozoJosselyn {
     }
     
     //Esta clase genera una serie la cual se incrementa de 5 en 5 y empieza en 3
-    public void jpSN8(int num){
+    public void jpSN8(int jpnum){
         short jpnumImprimir = 3;
     /* Este método imprime la serie mediante un For
     * 
-    * @param num: este parámetro permite limitar la serie a un numero de elementos
+    * @param jpnum: este parámetro permite limitar la serie a un numero de elementos
     */
-        while (--num >= 0) {
+        while (--jpnum >= 0) {
             System.out.print(jpnumImprimir + " ");
                 jpnumImprimir += 5;
         }

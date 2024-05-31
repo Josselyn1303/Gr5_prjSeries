@@ -19,28 +19,49 @@ public class App {
         System.out.println("Pozo Josselyn ");
         System.out.println("Quirola Jose ");
 
-        
+        /* Serie Numerica en la cual se le pide al usuario ingresar el tamaño de la serie
+         */
         System.out.println("\n ---Series Numericas---");
 
-        //System.out.print("Primer serie numerica\n");
-        //jq.mostrarSN1QJ(10);
-        //System.out.print("\nSegunda serie numerica\n");
-        //jq.mostrarSN2QJ(10);
-        System.out.print("Ingrese el número de términos para la serie SN7: ");
-        int num = scanner.nextInt();
+        int jpnum;
+        do {
+            System.out.print("\nIngrese el número de términos para la serie numérica SN7: ");
+            try {
+                jpnum = scanner.nextInt();
+                if (jpnum <= 0) {
+                        System.out.println("El tamaño debe ser un número positivo.");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Error: Ingresa un número válido.");
+                scanner.nextLine(); 
+                jpnum = -1; 
+            }
+        } while (jpnum <= 0);
 
-        System.out.println("\n Resultado de la serie numerica SN7: ");
-        jpSN.jpSN7(num);
+        System.out.println("\nResultado de la serie numerica SN7: ");
+        jpSN.jpSN7(jpnum);
 
-        System.out.print("\nIngrese el número de términos para la serie SN8: ");
+        int jpnum2;
+        do {
+            System.out.print("\nIngrese el número de términos para la serie SN8: ");
+            try {
+                jpnum2 = scanner.nextInt();
+                if (jpnum2 <= 0) {
+                        System.out.println("El tamaño debe ser un número positivo.");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Error: Ingresa un número válido.");
+                scanner.nextLine(); 
+                jpnum2 = -1; 
+            }
+        } while (jpnum2 <= 0);
 
-        int num2 = scanner.nextInt();
         System.out.println("\n Resultado de la serie numerica SN8: ");
-        jpSN.jpSN8(num2);
+        jpSN.jpSN8(jpnum2);
 
         int ogTamano1;
         do {
-            System.out.print("Introduce el tamaño de la serie numérica 9: ");
+            System.out.print("\nIntroduce el tamaño de la serie numérica 9: ");
             try {
                 ogTamano1 = scanner.nextInt();
                 if (ogTamano1 <= 0) {
@@ -56,7 +77,7 @@ public class App {
 
         int ogTamano2;
         do {
-            System.out.print("Introduce el tamaño de la serie numérica 10: ");
+            System.out.println("\nIntroduce el tamaño de la serie numérica 10: ");
             try {
                     ogTamano2 = scanner.nextInt();
                 if (ogTamano2 <= 0) {
@@ -70,30 +91,58 @@ public class App {
         } while (ogTamano2 <= 0);
         OrtizGelen.ogSN10(ogTamano2);
 
-
+        /* Inicio de la serie correspondiente a los caracteres
+         * el usuario ingresa el numero de caracteres que desea
+         */
         System.out.println("\n ---Series de Caracteres---");
-        System.out.print("\nIngrese el número de términos para la serie SC1: ");
-        int numCarac = scanner.nextInt();
+
+        int jpnumCarac;
+        do {
+            System.out.print("\nIngrese el número de términos para la serie SC1: ");
+            try {
+                    jpnumCarac = scanner.nextInt();
+                if (jpnumCarac <= 0) {
+                        System.out.println("El nnúmero de términos debe ser un número positivo.");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Error: Ingresa un número válido.");
+                scanner.nextLine(); 
+                jpnumCarac = -1; 
+            }
+        } while (jpnumCarac <= 0);
 
         System.out.println("\nResultado de la serie SC1: ");
-        jpSC.jpSC1(numCarac);
+        jpSC.jpSC1(jpnumCarac);
 
-        System.out.println("\nIngrese el número de términos para la serie SC2: ");
-        int tamanio = scanner.nextInt();
+        int jptamanio;
+        do {
+            System.out.println("\nIngrese el número de términos para la serie SC2: ");
+            try {
+                    jptamanio = scanner.nextInt();
+                if (jptamanio <= 0) {
+                        System.out.println("El número de términos debe ser un número positivo.");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Error: Ingresa un número válido.");
+                scanner.nextLine(); 
+                jptamanio = -1; 
+            }
+        } while (jptamanio <= 0);
+
         System.out.println("\n Resultado de la serie SC2: ");
-        jpSC.jpSC2(tamanio);
+        jpSC.jpSC2(jptamanio);
 
         int ogTamano3;
         char ogCaracter = ' ';
         do {
-            System.out.print("Introduce el tamaño de la serie: ");
+            System.out.println("\nIntroduce el tamaño de la serie: ");
             try {
                 ogTamano3 = scanner.nextInt();
                 if (ogTamano3 <= 0) {
                     System.out.println("El tamaño debe ser un número positivo.");
                     continue;
                 }
-                System.out.print("Introduce el carácter a utilizar: ");
+                System.out.println("\nIntroduce el carácter a utilizar: ");
                 ogCaracter = scanner.next().charAt(0);
                 if (ogCaracter >= '0' && ogCaracter <= '9') {
                     System.out.println("El carácter no puede ser un número.");
@@ -132,15 +181,23 @@ public class App {
         } while (ogTamano4 <= 0 || (ogCaracter1 >= '0' && ogCaracter1 <= '9') || (ogCaracter2 >= '0' && ogCaracter2 <= '9'));
         OrtizGelen.ogSC4(ogTamano4, ogCaracter1, ogCaracter2);
 
-        /*System.out.print("\nQuinta serie caracteres\n");
-        jq.mostrarSCQJ5(10);
-        System.out.print("\nSexta serie caracteres\n");
-        jq.mostrarSCQJ6(10);*/
-
+        /*Empieza la siguiente serie correspondiente a las figuras */
         System.out.println("\n ---Series de Figuras---");
         
-        System.out.println("\nIngrese el número de filas: ");
-        int filas = scanner.nextInt();
+        int filas;
+        do {
+            System.out.print("Introduce el tamaño de la figura: ");
+            try {
+                filas = scanner.nextInt();
+                if (filas <= 0) {
+                    System.out.println("El tamaño debe ser un número positivo.");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Error: Ingresa un número válido.");
+                scanner.nextLine(); 
+                filas = -1; 
+            }
+        } while (filas <= 0);
         
         System.out.println("\nIngrese el símbolo que desea utilizar: ");
         char elem = scanner.next().charAt(0);
