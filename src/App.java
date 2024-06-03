@@ -9,6 +9,9 @@ public class App {
         PozoJosselyn jpSC= new PozoJosselyn();
         PozoJosselyn jpSN= new PozoJosselyn();
         //QuirolaJose jq = new QuirolaJose ();
+        NovilloAlejandro naSN = new NovilloAlejandro();
+        NovilloAlejandro naSC = new NovilloAlejandro();
+        NovilloAlejandro naFig = new NovilloAlejandro();
 
         System.out.println("\nNombre del Grupo: POLI JUNIORS");
         System.out.println("\nIntegrantes: ");
@@ -90,6 +93,23 @@ public class App {
             }
         } while (ogTamano2 <= 0);
         OrtizGelen.ogSN10(ogTamano2);
+
+        int naTamano = 0;
+        do {
+            System.out.println("\nIntroduce el tamano de la serie numerica 11:");
+            try {
+                    naTamano = scanner.nextInt();
+                if (naTamano <= 0) {
+                        System.out.println("El tamano debe ser un numero positivo.");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Error: Ingresa un numero valido");
+                scanner.nextLine(); 
+                naTamano = -1; 
+            }
+        } while (naTamano <= 0);
+        System.out.println("SN 11:");
+        naSN.naSN11(naTamano);
 
         /* Inicio de la serie correspondiente a los caracteres
          * el usuario ingresa el numero de caracteres que desea
@@ -181,6 +201,51 @@ public class App {
         } while (ogTamano4 <= 0 || (ogCaracter1 >= '0' && ogCaracter1 <= '9') || (ogCaracter2 >= '0' && ogCaracter2 <= '9'));
         OrtizGelen.ogSC4(ogTamano4, ogCaracter1, ogCaracter2);
 
+        char naCaracter = ' ';
+        do {
+            System.out.print("Introduce el tamano de la serie 7: ");
+            try {
+                naTamano = scanner.nextInt();
+                if (naTamano <= 0) {
+                    System.out.println("El tamano debe ser un numero positivo.");
+                    continue;
+                }
+                System.out.print("Introduce el caracter a utilizar: ");
+                naCaracter = scanner.next().charAt(0);
+                if (naCaracter >= 0 && naCaracter <= 9) {
+                    System.out.println("Los caracteres no pueden ser numeros.");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Error: Ingresa un numero valido.");
+                scanner.nextLine(); 
+                naTamano = -1; 
+            }
+        } while (naTamano <= 0 || (naCaracter >= 0 && naCaracter <= 9));
+        System.out.println("SC7:");
+        naSC.naSC7(naTamano, naCaracter);
+
+        do {
+            System.out.print("Introduce el tamano de la serie 8: ");
+            try {
+                naTamano = scanner.nextInt();
+                if (naTamano <= 0) {
+                    System.out.println("El tamano debe ser un numero positivo.");
+                    continue;
+                }
+                System.out.print("Introduce el caracter a utilizar: ");
+                naCaracter = scanner.next().charAt(0);
+                if (naCaracter >= 0 && naCaracter <= 9) {
+                    System.out.println("Los caracteres no pueden ser numeros.");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Error: Ingresa un numero valido.");
+                scanner.nextLine(); 
+                naTamano = -1; 
+            }
+        } while (naTamano <= 0 || (naCaracter >= 0 && naCaracter <= 9));
+        System.out.println("SC8:");
+        naSC.naSC8(naTamano, naCaracter);
+
         /*Empieza la siguiente serie correspondiente a las figuras */
         System.out.println("\n ---Series de Figuras---");
         
@@ -260,6 +325,38 @@ public class App {
             }
         } while (ogTamano7 <= 0);
         OrtizGelen.ogF12(ogTamano7);
+
+        do {
+            System.out.println("\nIntroduce el tamano de la figura 16:");
+            try {
+                    naTamano = scanner.nextInt();
+                if (naTamano <= 0) {
+                        System.out.println("El tamano debe ser un numero positivo.");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Error: Ingresa un numero valido");
+                scanner.nextLine(); 
+                naTamano = -1; 
+            }
+        } while (naTamano <= 0);
+        System.out.println("Figura 16:");
+        naFig.naF16(naTamano);
+
+        do {
+            System.out.println("\nIntroduce el tamano de la figura 19:");
+            try {
+                    naTamano = scanner.nextInt();
+                if (naTamano <= 0) {
+                        System.out.println("El tamano debe ser un numero positivo.");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Error: Ingresa un numero valido");
+                scanner.nextLine(); 
+                naTamano = -1; 
+            }
+        } while (naTamano <= 0);
+        System.out.println("Figura 19:");
+        naFig.naF19(naTamano);
 
         scanner.close();
     }
