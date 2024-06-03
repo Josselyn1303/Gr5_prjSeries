@@ -1,5 +1,6 @@
 public class NovilloAlejandro {
     
+    
     public void naSN11(int tamano) {
         int valor = 2;
         int diferencia = 4; 

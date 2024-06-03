@@ -12,6 +12,7 @@ public class App {
         NovilloAlejandro naSN = new NovilloAlejandro();
         NovilloAlejandro naSC = new NovilloAlejandro();
         NovilloAlejandro naFig = new NovilloAlejandro();
+        
 
         System.out.println("\nNombre del Grupo: POLI JUNIORS");
         System.out.println("\nIntegrantes: ");
