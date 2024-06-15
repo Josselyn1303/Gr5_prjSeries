@@ -2,6 +2,8 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class App {
+    public static Scanner sc = new Scanner(System.in);
+
     public static void main(String[] args) throws Exception {
         
         Scanner scanner = new Scanner(System.in);
@@ -12,11 +14,12 @@ public class App {
         NovilloAlejandro naSN = new NovilloAlejandro();
         NovilloAlejandro naSC = new NovilloAlejandro();
         NovilloAlejandro naFig = new NovilloAlejandro();
+        MosqueraMateo mateo = new MosqueraMateo();
         
 
         System.out.println("\nNombre del Grupo: POLI JUNIORS");
         System.out.println("\nIntegrantes: ");
-        System.out.println("\nMorales Mateo");
+        System.out.println("\nMosquera Mateo");
         System.out.println("Novillo Alejandro");
         System.out.println("Ortiz Gelen");
         System.out.println("Ortiz Justin");
@@ -26,6 +29,9 @@ public class App {
         /* Serie Numerica en la cual se le pide al usuario ingresar el tamaño de la serie
          */
         System.out.println("\n ---Series Numericas---");
+
+        mateo.mmSN5();
+        mateo.mmSN6();
 
         int jpnum;
         do {
@@ -247,9 +253,18 @@ public class App {
         System.out.println("SC8:");
         naSC.naSC8(naTamano, naCaracter);
 
+        mateo.mmSC9();
+
+        mateo.mmSC10(); 
+
         /*Empieza la siguiente serie correspondiente a las figuras */
         System.out.println("\n ---Series de Figuras---");
         
+        mateo.mmF1();
+        mateo.mmF2();
+        mateo.mmF3();
+
+
         int filas;
         do {
             System.out.print("Introduce el tamaño de la figura: ");
