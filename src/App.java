@@ -2,7 +2,35 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class App {
+    private static Scanner sc = new Scanner(System.in);
+
+    // Control de errores en Recursion
+    private static int pedirNumero(String mensaje) {
+        int numero = 0;
+        boolean inputValido = false;
+
+        while (!inputValido) {
+            try {
+                System.out.println(mensaje);
+                numero = Integer.parseInt(sc.nextLine());
+
+                if (numero >= 0) {
+                    inputValido = true;
+                } else {
+                    System.out.println("Por favor, ingrese un numero positivo.");
+                }
+
+            } catch (NumberFormatException e) {
+                System.out.println("Por favor, ingrese un numero entero.");
+            }
+        }
+
+        return numero;
+    }
     public static void main(String[] args) throws Exception {
+
+        int tamañoMatriz = 0;
+        char caracter = ' ';
         
         Scanner scanner = new Scanner(System.in);
         PozoJosselyn figuras = new PozoJosselyn();
@@ -19,6 +47,50 @@ public class App {
         System.out.println("Pozo Josselyn ");
         System.out.println("Quirola Jose ");
 
+        //Cadena de caracteres: Ejercicio 6 Josselyn Pozo
+        System.out.println("----- Cadena 6 -----");
+        System.out.println("Ingrese la frase que desea trabajar:");
+        String frase = sc.nextLine();
+        CR6jp oCR6jp = new CR6jp();
+        oCR6jp.mostrarCadena6(frase);
+        esperarTecla();
+        limpiarConsola();
+
+        //Arrays: Ejercicio 2 Josselyn Pozo
+        System.out.println("----- Arrays 2 -----");
+        System.out.println("Mi nombre es: Josselyn Pozo. Mis iniciales son: J P");
+        System.out.println("Ingrese el tamaño de la matriz:");
+        tamañoMatriz = Integer.parseInt(sc.nextLine());
+
+        System.out.println("Ingrese el caracter para las iniciales:");
+        caracter = sc.nextLine().charAt(0);
+
+        Arrays2 oArrays2 = new Arrays2();
+        oArrays2.crearMatriz(tamañoMatriz, caracter);
+        oArrays2.mostrarMatriz();
+        esperarTecla();
+
+        //Loading: Ejercicio 3 Josselyn Pozo
+        System.out.println("----- Loading 3 -----");
+        Loading3 oLoading3 = new Loading3();
+        oLoading3.mostrarLoading3();
+        esperarTecla();
+        limpiarConsola();
+
+        // Recursion: Ejercicio 2 Josselyn Pozo
+        System.out.println("----- Recursion 2 -----");
+        Recursion2 oRecursion2 = new Recursion2();
+        int jpnumero1 = pedirNumero("Ingresa el primer numero a sumar ");
+        limpiarConsola();
+        System.out.println("----- Recursion 2 -----");
+        int jpnumero2 = pedirNumero("Ingresa el segundo numero a sumar ");
+        limpiarConsola();
+        System.out.println("----- Recursion 2 -----");
+        oRecursion2.jpsumaRecursion(jpnumero1, jpnumero2);
+        esperarTecla();
+        limpiarConsola();
+        scanner.close();
+        
         /* Serie Numerica en la cual se le pide al usuario ingresar el tamaño de la serie
          */
         System.out.println("\n ---Series Numericas---");
@@ -261,6 +333,15 @@ public class App {
         } while (ogTamano7 <= 0);
         OrtizGelen.ogF12(ogTamano7);
 
-        scanner.close();
+        
+    }
+
+    public static void esperarTecla() {
+        System.out.println("Presiona Enter para continuar...");
+        sc.nextLine(); // Espera a que el usuario presione Enter
+    }
+
+    public static void limpiarConsola() throws Exception {
+        new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
     }
 }
