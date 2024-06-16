@@ -359,6 +359,95 @@ public class App {
         System.out.println("Figura 19:");
         naFig.naF19(naTamano);
 
-        scanner.close();
+     
+        System.out.println("Ingrese una frase:");
+        String ogFrase = scanner.nextLine().trim();
+
+        String ogFraseTransformada = OrtizGelen.ogC05(ogFrase);
+        System.out.println("Salida:");
+        System.out.println(ogFraseTransformada);
+        String ogFrase1;
+        boolean contieneNumeros2;
+
+        do {
+            System.out.print("Ingrese una frase sin números: ");
+            ogFrase1 = scanner.nextLine().trim();
+
+            contieneNumeros2 = false;
+            for (char c : ogFrase1.toCharArray()) {
+                if (Character.isDigit(c)) {
+                    contieneNumeros2 = true;
+                    break;
+                }
+            }
+
+            if (contieneNumeros2) {
+                System.out.println("La frase no debe contener números. Por favor, ingrese nuevamente:");
+            }
+        } while (contieneNumeros2);
+
+        OrtizGelen.ogCadenaC7(ogFrase1);
+
+         
+        String ogNombreCompleto;
+        boolean contieneNumeros3;
+        do {
+            System.out.print("Ingrese su nombre completo sin números: ");
+            ogNombreCompleto = scanner.nextLine().trim();
+
+            contieneNumeros3 = false;
+            for (char c : ogNombreCompleto.toCharArray()) {
+                if (Character.isDigit(c)) {
+                    contieneNumeros3 = true;
+                    break;
+                }
+            }
+
+            if (contieneNumeros3) {
+                System.out.println("El nombre no debe contener números. Por favor, ingrese nuevamente:");
+            }
+        } while (contieneNumeros3);
+
+        OrtizGelen.ogMostrarA01(ogNombreCompleto);
+
+        System.out.println("L04:");
+        OrtizGelen.ogL04();
+
+            // Cuarta entrada sin números (nombre ingresado)
+        String ogNombreIngresado;
+        boolean contieneNumeros4;
+        do {
+            System.out.println("Por favor ingrese su nombre sin números:");
+            ogNombreIngresado = scanner.nextLine().trim();
+
+            contieneNumeros4 = false;
+            for (char c : ogNombreIngresado.toCharArray()) {
+                if (Character.isDigit(c)) {
+                    contieneNumeros4 = true;
+                    break;
+                }
+            }
+
+            if (contieneNumeros4) {
+                System.out.println("El nombre no debe contener números. Por favor, ingrese nuevamente:");
+            }
+        } while (contieneNumeros4);
+        OrtizGelen.ogL08(ogNombreIngresado);
+
+        try {
+            System.out.print("Por favor ingrese un número: ");
+            int numero = scanner.nextInt();
+            OrtizGelen.ogR05(numero);
+        } catch (Exception e) {
+            System.out.println("Ha ocurrido un error: " + e.getMessage());
+        } finally {
+            scanner.close(); 
+        }
+
+        System.out.print("Por favor ingrese un número: ");
+        int numero = scanner.nextInt();
+        OrtizGelen.ogR05(numero);
     }
+    
 }
+
